@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+# React Alert Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+This project is a React application that utilizes TypeScript to create a flexible and reusable Alert component. This component allows you to display various messages to users, such as alerts, information, success messages, warnings, and errors. Icons from the `lucide-react` library are used to enhance the appearance of the alerts, making them more visually appealing.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Components
 
-## Expanding the ESLint configuration
+### 1. `App.tsx`
+- Contains the main `App` component that renders a set of different alerts using the `Alert` component.
+- Passes the alert type, icon, title, and description (if available) to the `Alert` component.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 2. `Alert.tsx`
+- The `Alert` component that receives props such as type, icon, title, description, and children.
+- Displays the alert based on the specified type, with the option to close the alert using a close icon.
 
-- Configure the top-level `parserOptions` property like this:
+### 3. `index.scss`
+- Contains custom styles for each type of alert.
+- Uses SCSS variables to define colors and backgrounds for each alert type.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 4. `index.ts`
+- Contains the definition of the `AlertTypes` type, which specifies the different available alert types.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## How to Use
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Make sure to install all dependencies by running:
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Start the application using:
+   ```bash
+   npm start
+   ```
+
+3. You can modify the `App.tsx` component to add or change alerts as needed.
+
+## Demo
+
+https://abdelrahman-samy-2023.github.io/react-ts-alert-project/
+
+## Contributing
+
+If you would like to contribute to this project, please open a pull request with your changes.
+
+## License
+
+This project is licensed under Abdelrahman Samy - see the LICENSE file for details.
